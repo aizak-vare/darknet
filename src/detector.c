@@ -14,7 +14,18 @@
 
 #ifndef CV_VERSION_EPOCH
 #include "opencv2/videoio/videoio_c.h"
+//modify add prefix for debug
+#ifdef WIN32
+#if _DEBUG
+#define CV_LIB_PREFIX "d"
+#else
+#define CV_LIB_PREFIX 
+#endif
+#define OPENCV_VERSION CVAUX_STR(CV_VERSION_MAJOR)""CVAUX_STR(CV_VERSION_MINOR)""CVAUX_STR(CV_VERSION_REVISION)""CV_LIB_PREFIX
+#else
 #define OPENCV_VERSION CVAUX_STR(CV_VERSION_MAJOR)""CVAUX_STR(CV_VERSION_MINOR)""CVAUX_STR(CV_VERSION_REVISION)
+#endif
+
 #pragma comment(lib, "opencv_world" OPENCV_VERSION ".lib")
 #else
 #define OPENCV_VERSION CVAUX_STR(CV_VERSION_EPOCH)""CVAUX_STR(CV_VERSION_MAJOR)""CVAUX_STR(CV_VERSION_MINOR)
