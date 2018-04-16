@@ -75,6 +75,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)output\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(Platform)\DLL_$(Configuration)\</IntDir>
+    <TargetName>yolo_cpp_dll</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
